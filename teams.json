@@ -1,0 +1,14 @@
+[
+    {
+        "number": 1234,
+        "name": "Cool bots",
+        "school": "Lexington",
+        "notes": ""
+    },
+    {
+        "number": 5678,
+        "name": "Funzo",
+        "school": "MIT-LL",
+        "notes": ""
+    }
+]

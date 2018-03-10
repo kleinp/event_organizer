@@ -1,0 +1,19 @@
+.scrolling-table
+{
+	width: 100%;
+	overflow-y: auto;
+	_overflow: auto;
+	margin: 0 0 1em;
+}
+
+.scrolling-table table
+{
+    margin: 0;
+    border-collapse: collapse;
+}
+
+.scrolling-table td, th
+{
+    padding: .5em 1em;
+    border: 1px solid #999;
+}

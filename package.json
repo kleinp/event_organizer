@@ -1,0 +1,11 @@
+{
+    "name": "event_organizer",
+    "version": "0.0.1",
+    "description": "Keeps track of inspections at FTC events",
+    "dependencies": {
+        "bcrypt": "^1.0.3",
+        "decomment": "^0.9.1",
+        "express": "^4.16.2",
+        "socket.io": "^2.0.4"
+    }
+}
