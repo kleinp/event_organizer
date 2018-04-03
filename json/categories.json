@@ -1,0 +1,43 @@
+{
+    "Check-in": {
+        "permission": "1",
+        "states": {
+            "No": "blank",
+            "Cancelled": "blank",
+            "No show": "blank",
+            "Yes": "green"
+        }
+    },
+    "Sizing": {
+        "permission": "10",
+        "states": {
+            "N/A": "blank",
+            "Fail": "red",
+            "Pass": "green"
+        }
+    },
+    "Hardware inspection": {
+        "permission": "100",
+        "states": {
+            "N/A": "blank",
+            "Fail": "red",
+            "Pass": "green"
+        }
+    },
+    "Software inspection": {
+        "permission": "1000",
+        "states": {
+            "N/A": "blank",
+            "Fail": "red",
+            "Pass": "green"
+        }
+    },
+    "Field inspection": {
+        "permission": "10000",
+        "states": {
+            "N/A": "blank",
+            "Fail": "red",
+            "Pass": "green"
+        }
+    }
+}

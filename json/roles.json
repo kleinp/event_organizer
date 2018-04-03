@@ -1,0 +1,23 @@
+{
+    "Admin": {
+        "permissions": "11111111111111"
+    },
+    "Registration": {
+        "permissions": "01"
+    },
+    "Sizer": {
+        "permissions": "10"
+    },
+    "HW inspector": {
+        "permissions": "100"
+    },
+    "SW inspector": {
+        "permissions": "1000"
+    },
+    "Field inspector": {
+        "permissions": "11000"
+    },
+    "FTA": {
+        "permissions": "11000"
+    }
+}
