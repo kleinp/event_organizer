@@ -114,7 +114,7 @@ $(document).on('pagecreate', '#overview', (event) => {
             html += '<li class="ui-li-static ui-body-inherit">';
             html += '<h3>' + category + '</h3>';
             // Only incude a button if the user has permission to change this field
-            if (user_info.user_permission & categories_db[category]['permission']) {
+            if (parseInt(user_info.user_permission, 2) & parseInt(categories_db[category]['permission'],2)) {
                 html += '<button id="cat_' + c + '" class="ui-btn ui-btn-right ui-shadow ui-corner-all ui-btn-inline ui-mini" id="test">Update</button>';
             }
             html += '<p id="state_' + t + '_' + c + '">';

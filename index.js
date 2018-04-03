@@ -63,6 +63,7 @@ if (create_new_db) {
   // console.log(db);
 }
 
+// load/generate passwords
 if (settings['generate passwords']) {
   console.log('Settings file requests new passwords be generated');
   generate_passwords();
@@ -77,7 +78,6 @@ if (settings['generate passwords']) {
     generate_passwords();
   }
 }
-
 
 // socket connection to web interface
 io.on('connection', function (socket) {
