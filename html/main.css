@@ -17,3 +17,22 @@
     padding: .5em 1em;
     border: 1px solid #999;
 }
+
+.ui-listview .wrapped
+{
+    white-space: normal;
+}
+
+.blank_table {
+    text-shadow: none;
+}
+
+.red_table {
+    background: rgb(248, 179, 179);
+    text-shadow: none;
+}
+
+.green_table {
+    background: rgb(160, 228, 160);
+    text-shadow: none;
+}

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Page Title</title>
+	<title>FTC Event organizer</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -10,300 +10,37 @@
 	<link rel="stylesheet" href="hosted/jquery.mobile-1.4.5.min.css" />
 	<script src="hosted/jquery-1.11.1.min.js"></script>
 	<script src="hosted/jquery.mobile-1.4.5.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="hosted/js.cookie.js"></script>
+
 </head>
 
 <body>
 
 	<!-- Start of first page -->
-	<div data-role="page" id="foo">
+	<div data-role="page" id="login">
 
 		<div data-role="header">
-			<h1>Foo</h1>
+			<h1>FTC Event Organizer</h1>
 		</div>
 		<!-- /header -->
 
 		<div data-role="content">
-			<p>I'm first in the source order so I'm shown as the page.</p>
-			<p>View internal page called
-				<a href="#bar" data-transition="slide">bar</a>
-			</p>
-
-			<table>
-				<tr>
-					<th>Test</th>
-					<th>Team #</th>
-				</tr>
-				<tr>
-					<td>ABC</td>
-					<td>1234</td>
-				</tr>
-			</table>
-
-			<div class="scrolling-table">
-				<table>
-					<tr>
-						<th>Header 1</th>
-						<th>Header 2</th>
-						<th>Header 3</th>
-						<th>Header 4</th>
-						<th>Header 5</th>
-						<th>Header 6</th>
-						<th>Header 7</th>
-						<th>Header 8</th>
-					</tr>
-					<tr>
-						<td>row1_cell1</td>
-						<td>row1_cell2</td>
-						<td>row1_cell3</td>
-						<td>row1_cell4</td>
-						<td>row1_cell5</td>
-						<td>row1_cell6</td>
-						<td>row1_cell7</td>
-						<td>row1_cell8</td>
-					</tr>
-					<tr>
-						<td>row2_cell1</td>
-						<td>row2_cell2</td>
-						<td>row2_cell3</td>
-						<td>row2_cell4</td>
-						<td>row2_cell5</td>
-						<td>row2_cell6</td>
-						<td>row2_cell7</td>
-						<td>row2_cell8</td>
-					</tr>
-					<tr>
-						<td>row3_cell1</td>
-						<td>row3_cell2</td>
-						<td>row3_cell3</td>
-						<td>row3_cell4</td>
-						<td>row3_cell5</td>
-						<td>row3_cell6</td>
-						<td>row3_cell7</td>
-						<td>row3_cell8</td>
-					</tr>
-					<tr>
-						<td>row4_cell1</td>
-						<td>row4_cell2</td>
-						<td>row4_cell3</td>
-						<td>row4_cell4</td>
-						<td>row4_cell5</td>
-						<td>row4_cell6</td>
-						<td>row4_cell7</td>
-						<td>row4_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-					<tr>
-						<td>row5_cell1</td>
-						<td>row5_cell2</td>
-						<td>row5_cell3</td>
-						<td>row5_cell4</td>
-						<td>row5_cell5</td>
-						<td>row5_cell6</td>
-						<td>row5_cell7</td>
-						<td>row5_cell8</td>
-					</tr>
-				</table>
-			</div>
+			<h3 id="notify">Please log in to continue</h3>
+			<form onSubmit="return false">
+				<label for="roles">Select your role</label>
+				<select id="roles"></select>
+				<input type="text" id="name" placeholder="Your name" />
+				<input type="password" id="pw" placeholder="Password" />
+				<h4>Ask your event organizer for your role password</h4>
+				<button id="submit">Log in!</button>
+			</form>
 		</div>
 		<!-- /content -->
-
-		<div data-role="footer">
-			<h4>Page Footer</h4>
-		</div>
-		<!-- /footer -->
-	</div>
-	<!-- /page -->
-
-
-	<!-- Start of second page -->
-	<div data-role="page" data-theme="b" id="bar">
-
-		<div data-role="header">
-			<h1>Bar</h1>
-		</div>
-		<!-- /header -->
-
-		<div data-role="content">
-			<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is
-				beeing clicked.</p>
-			<p id="var_content"></p>
-			<button id="b1">Back to foo</button>
-		</div>
-		<!-- /content -->
-
-		<div data-role="footer">
-			<h4>Page Footer</h4>
-		</div>
-		<!-- /footer -->
 	</div>
 	<!-- /page -->
 
 </body>
-
-<script>
-
-	var i = 0;
-
-	$('#bar').on('pagebeforeshow', function (event) {
-		console.log(event);
-		$('#var_content').html('hello world! ' + i++);
-	});
-
-	$('#b1').on('click', function () {
-		// $.mobile.changePage('#foo', {transition: 'slide', reverse: true});
-		$(':mobile-pagecontainer').pagecontainer('change', '#foo', { transition: 'slide', reverse: true });
-	});
-
-</script>
+<script src="js/login.js"></script>
 
 </html>

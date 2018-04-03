@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FTC Event organizer</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="hosted/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="main.css" />
+	<script src="hosted/jquery-1.11.1.min.js"></script>
+	<script src="hosted/jquery.mobile-1.4.5.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="hosted/js.cookie.js"></script>
+</head>
+
+<body>
+
+	<!-- Start of overview page -->
+	<div data-role="page" id="overview">
+
+		<div data-role="panel" id="nav_panel" data-position="left" data-display="overlay">
+			<h1>Settings</h1>
+			<p id="user_display"></p>
+			<p id="role_display"></p>
+			<button id="log_out" class="ui-btn ui-btn-inline ui-mini">Log out</button>
+		</div>
+
+		<div data-role="header" data-position="fixed">
+			<a href="#nav_panel" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Settings</a>
+			<h1>FTC Event Organizer</h1>
+			<a href="#scan" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini" data-transition="slide">Scan QR</a>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">
+			<div class="scrolling-table">
+				<table id="summary_table"></table>
+			</div>
+		</div>
+		<!-- /content -->
+
+	</div>
+	<!-- /page -->
+
+
+	<!-- Start of team page -->
+	<div data-role="page" id="team_page">
+
+		<div data-role="header" data-position="fixed">
+			<a href="#overview" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini" data-transition="slide" data-direction="reverse">Back</a>
+			<h1 id="team_number"></h1>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content" id="team_details">
+			Placeholder - filled in with Javascript
+		</div>
+		<!-- /content -->
+
+	</div>
+	<!-- /page -->
+
+	<!-- Start of category details -->
+	<div data-role="page" id="category_page">
+
+		<div data-role="header" data-position="fixed">
+			<a href="#team_page" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini" data-transition="slide" data-direction="reverse">Back</a>
+			<h1 id="team_number_category"></h1>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content" id="category_details">
+			<h3 id="category_header"></h3>
+			<form onSubmit="return false">
+				<label for="state_select">Change state</label>
+				<select id="state_select"></select>
+				<label for="text">and/or add comments</label>
+				<input type="text" id="event_text"/>
+				<button id="update_category">Update</button>
+			</form>
+		</div>
+		<!-- /content -->
+
+	</div>
+	<!-- /page -->
+
+	<!-- Start of scan page -->
+	<div data-role="page" id="scan">
+
+		<div data-role="header">
+			<a href="#overview" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini" data-transition="slide" data-direction="reverse">Back</a>
+			<h1>Scan QR</h1>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">
+			<h2>To be implemented...</h2>
+			<p>Will be able to scan a QR code here instead of selecting team from the table</p>
+		</div>
+		<!-- /content -->
+
+	</div>
+	<!-- /page -->
+
+
+
+</body>
+<script src="js/main.js"></script>
+
+<script>
+
+	// var i = 0;
+
+	// $('#bar').on('pagebeforeshow', function (event) {
+	// 	console.log(event);
+	// 	$('#var_content').html('hello world! ' + i++);
+	// });
+
+	// $('#b1').on('click', function () {
+	// 	// $.mobile.changePage('#foo', {transition: 'slide', reverse: true});
+	// 	$(':mobile-pagecontainer').pagecontainer('change', '#foo', { transition: 'slide', reverse: true });
+	// });
+
+</script>
+
+</html>
