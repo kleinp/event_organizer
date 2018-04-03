@@ -1,0 +1,78 @@
+0. Admin/setup page (json file?)
+	- Enter teams, scheduled times
+	- Enter benchmarks and possible states
+
+1. Log-in page
+	- Role (Viewer, Admin, Hardware inspector, Software inspector, FTA, Queuer)
+	- Name
+	- Password (provided by event coordinator)
+	
+2. Main
+	- 'scan' button anchored to top
+	- 'mode' button anchored to top (Check in & inspection, Play)
+	
+	- Table (check in & inspection)
+	
+	| TEAM # | Check-in | HW   | SW   |
+	| 1234   | No       | N/A  | N/A  |
+	| 2345   | Yes      | Pass | Fail |
+	
+	- Table (Play) ??
+	
+	| TEAM # | Remaining matches | Next round | QR  | QP   |
+	| 1234   | 4                 | 21, RED 1  | 512 | 2345 |
+	
+3. Scan
+	- Brings up camera view
+	- If scan successful brings to Detail of that team, or error that this team not in database
+	
+4. Detail (when clicking on any team in the table or scan)
+	- List (Check in & inspection)
+	
+	-- Team 1234 --
+	
+	Check-in: Yes
+	8:05AM, Peter - 8 team members
+	8:05AM, Peter - changed state to 'Yes'
+	6:00AM, System - scheduled 8:10AM
+	
+	HW: Pass
+	9:05AM, Peter - changed state to 'Pass'
+	8:56AM, Peter - Too many loose wires
+	8:55AM, Peter - changed state to 'Fail'
+	
+	Notes:
+	10:05AM, Peter - several team members jumped over the barrier
+	
+	- List (Play)
+	
+	-- Team 1234 --
+	
+	Match 1, round 4, BLUE 2
+	QR 100, QP 1023
+	Score breakdown...?
+	
+5. Modify (when clicking on a benchmark for the team)
+	
+	-- SW inspection --
+	
+	State: (dropdown) 'N/A' 'Fail' 'Pass'
+	Add note: [                    ]
+	<SAVE>
+	
+
+6. Database
+	- List of roles, their permissions and passwords (hashed) (random word password generator for passwords?)
+	- List of users and roles they provided
+	- Team #s
+	- List of benchmarks
+		- Possible state names & colors
+		- 'Check-in' 0=No,Red 1=No show/cancelled,Yellow, 2=Yes,Green
+		- 'Hardware inspection' 0=N/A,Red 1=
+	- State, color, timestamp, updater, notes (cumulative)
+	
+Test json file suggest possibly up to 10Kbyte per team, at larger events with 40 teams
+this would be MB range, so rather than sending everything, just push individual
+team information, so at the beginning generate an array of teams. The NPM server 
+will maintain a non-volatile json version, on clients they are simply javascript
+variables
