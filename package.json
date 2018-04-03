@@ -2,6 +2,9 @@
     "name": "event_organizer",
     "version": "0.0.1",
     "description": "Keeps track of inspections at FTC events",
+    "scripts": {
+        "start": "node index.js"
+    },
     "dependencies": {
         "bcrypt": "^1.0.3",
         "decomment": "^0.9.1",
