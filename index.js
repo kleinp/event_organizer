@@ -3,7 +3,7 @@ var decomment = require('decomment');
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
-var io = require('socket.io')(http, {wsEngine: 'ws'});
+var io = require('socket.io')(http, { wsEngine: 'ws' });
 var bcrypt = require('bcrypt');
 
 // Serve the html folder
@@ -16,15 +16,14 @@ var settings = JSON.parse(decomment(fs.readFileSync('json/settings.json', 'utf8'
 var teams = JSON.parse(decomment(fs.readFileSync('json/teams.json', 'utf8')));
 var roles = JSON.parse(decomment(fs.readFileSync('json/roles.json', 'utf8')));
 var categories_db = JSON.parse(decomment(fs.readFileSync('json/categories.json', 'utf8')));
-var passwords = JSON.parse(decomment(fs.readFileSync('json/passwords.json', 'utf8')));
 
 // console.log(settings);
 // console.log(teams);
 // console.log(roles);
 // console.log(categories);
-// console.log(passwords);
 
 // these variables are generated on startup, or loaded separately
+var passwords = {};
 var pw_hashes = {};
 var db = {};
 
@@ -61,14 +60,24 @@ if (create_new_db) {
     };
   }
 
-  console.log(db);
+  // console.log(db);
 }
 
 if (settings['generate passwords']) {
+  console.log('Settings file requests new passwords be generated');
   generate_passwords();
+} else {
+  if (fs.existsSync('json/passwords.json')) {
+    console.log('Loading existing passwords file');
+    passwords = JSON.parse(decomment(fs.readFileSync('json/passwords.json', 'utf8')));
+    generate_password_hashes();
+    console.log('Admin password: ', passwords['Admin']);
+  } else {
+    console.log('No passwords file found, generating one');
+    generate_passwords();
+  }
 }
-generate_password_hashes();
-console.log('Admin password: ', passwords['Admin']);
+
 
 // socket connection to web interface
 io.on('connection', function (socket) {
@@ -158,6 +167,7 @@ http.listen(3000, function () {
 // Generates new passwords and saves them to JSON file
 function generate_passwords() {
   fs.open('json/passwords.json', 'w', (err, fd) => {
+    
     if (err) {
       console.log('Error opening passwords.json for writing');
       return;
@@ -178,6 +188,9 @@ function generate_passwords() {
 
     fs.writeSync(fd, JSON.stringify(passwords));
     fs.closeSync(fd);
+
+    generate_password_hashes();
+    console.log('Admin password: ', passwords['Admin']);
   });
 }
 
