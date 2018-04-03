@@ -54,11 +54,25 @@ $(document).on('pagecreate', '#overview', (event) => {
     });
 
     function generate_team_row(team) {
-        var html = '<th>' + team + '</th>';
+
+        var html = '';
         var categories = Object.keys(categories_db);
+        var allGreen = true;
         categories.forEach(category => {
-            html += '<td class="'+categories_db[category]['states'][live_db[team]['categories'][category]['state']]+'_table">' + live_db[team]['categories'][category]['state'] + '</td>';
+            var categoryColor = categories_db[category]['states'][live_db[team]['categories'][category]['state']];
+            if (categoryColor != 'green') {
+                allGreen = false;
+            }
+            html += '<td class="' + categoryColor + '_table">' + live_db[team]['categories'][category]['state'] + '</td>';
         });
+
+        // add the team number, make green if all other columns are green
+        if (allGreen) {
+            html = '<th class="green_table">' + team + '</th>' + html;
+        } else {
+            html = '<th>' + team + '</th>' + html;
+        }
+
         return (html);
     }
 
@@ -114,7 +128,7 @@ $(document).on('pagecreate', '#overview', (event) => {
             html += '<li class="ui-li-static ui-body-inherit">';
             html += '<h3>' + category + '</h3>';
             // Only incude a button if the user has permission to change this field
-            if (parseInt(user_info.user_permission, 2) & parseInt(categories_db[category]['permission'],2)) {
+            if (parseInt(user_info.user_permission, 2) & parseInt(categories_db[category]['permission'], 2)) {
                 html += '<button id="cat_' + c + '" class="ui-btn ui-btn-right ui-shadow ui-corner-all ui-btn-inline ui-mini" id="test">Update</button>';
             }
             html += '<p id="state_' + t + '_' + c + '">';
